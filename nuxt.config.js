@@ -1,6 +1,6 @@
 export default {
   target: 'static',
-  // Global page headers: https://go.nuxtjs.dev/config-head
+  // html属性配置
   head: {
     title: 'dj-libiary',
     htmlAttrs: {
@@ -17,12 +17,12 @@ export default {
     ]
   },
 
-  // Global CSS: https://go.nuxtjs.dev/config-css
+  // 全局样式
   css: [
     'element-ui/lib/theme-chalk/index.css'
   ],
 
-  // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
+  // 插件
   plugins: [
     '@/plugins/element-ui',
     '@/plugins/axios'
@@ -42,22 +42,24 @@ export default {
 
     }
   },
-  // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
-  // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     // https://go.nuxtjs.dev/typescript
     '@nuxt/typescript-build',
   ],
 
-  // Modules: https://go.nuxtjs.dev/config-modules
+  // modules依赖
   modules: [
     '@nuxtjs/axios',
     "@nuxtjs/proxy"
   ],
 
-  // Build Configuration: https://go.nuxtjs.dev/config-build
+  // 打包依赖
   build: {
     transpile: [/^element-ui/],
+  },
+  // 配置页面访问前中间件
+  router: {
+    middleware: 'midDemo'
   }
 }

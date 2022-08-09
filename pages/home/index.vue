@@ -12,13 +12,19 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import  {HomeServe} from '@/services/index'
+import { HomeServe } from '@/services/index'
 export default Vue.extend({
   name: 'IndexPage',
   data() {
     return {
-        title: 'name',
-        serveData: null
+      title: 'name',
+      serveData: null,
+      items: [
+        { name: '1111' },
+        { name: '2222' },
+        { name: '3333' },
+        { name: '4444' }
+      ]
     }
   },
   created() {
@@ -27,8 +33,7 @@ export default Vue.extend({
   },
   methods: {
     async init() {
-       this.serveData = await HomeServe.serveOne({url: 'http://icanhazip.com'});
-       console.log(this.serveData);
+      this.serveData = await HomeServe.serveOne({ url: 'http://icanhazip.com' });
     }
   }
 })
